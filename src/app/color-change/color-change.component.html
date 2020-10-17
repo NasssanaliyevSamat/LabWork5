@@ -1,0 +1,50 @@
+<div [id]="1" style="background-color: brown">
+  <mat-card style="background-color: aqua">
+    <mat-card-title>
+      <h5>Color description and hex code!</h5>
+    </mat-card-title>
+    <mat-card-content>
+    <ul class="colors" >
+      <li  *ngFor ="let color of colors" [class.mat-select]="color === selected" (click)="onSelected(color)" [id]="2" >
+        <span class="badge" id="span1" [ngStyle]="{'background-color': color.ColorHex}" > {{color.id}}</span>{{color.ColorName}}
+<!--        <span class="mat-badge" [ngStyle]="{'background-color': color.ColorHex}" ></span>-->
+      </li>
+    </ul>
+      <div class="Desc" *ngIf="selected" [ngStyle]="{'background-color': selected.ColorHex}">
+        <h5>{{selected.ColorName}}</h5>
+        <div>
+          <label>Color name:
+            <input class="inp" [(ngModel)]="selected.ColorName" placeholder="ColorName"/>
+            <input class="inp" [(ngModel)]="selected.ColorHex" placeholder="ColorHex"/>
+          </label>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!--<ul class ="colors">-->
+<!--  <li *ngFor="let color of colors">-->
+<!--    <span class="badge"> {{color.ColorName}}</span>-->
+<!--  </li>-->
+<!--</ul>-->
+<!--<h2>My Heroes</h2>-->
+<!--<ul class="heroes">-->
+<!--  <li *ngFor="let hero of heroes"-->
+<!--      [class.selected]="hero === selectedHero"-->
+<!--      (click)="onSelect(hero)">-->
+<!--    <span class="badge">{{hero.id}}</span> {{hero.name}}-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--<div *ngIf="selectedHero">-->
+
+<!--  <h2>{{selectedHero.name | uppercase}} Details</h2>-->
+<!--  <div><span>id: </span>{{selectedHero.id}}</div>-->
+<!--  <div>-->
+<!--    <label>name:-->
+<!--      <input [(ngModel)]="selectedHero.name" placeholder="name"/>-->
+<!--    </label>-->
+<!--  </div>-->
+
+<!--</div>-->
